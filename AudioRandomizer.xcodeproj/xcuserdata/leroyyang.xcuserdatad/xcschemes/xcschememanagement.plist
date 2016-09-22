@@ -9,10 +9,30 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>AudioRandomizerExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>AudioRandomizerExtensionMac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>173424881D930A6D00B168CC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>174042E31D9265D100236452</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>174042FC1D92729400236452</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,14 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		172FAC5D1D94426500B49594 /* PresetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172FAC5C1D94426500B49594 /* PresetModel.swift */; };
+		172FAC5E1D94426500B49594 /* PresetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172FAC5C1D94426500B49594 /* PresetModel.swift */; };
+		173424911D930A6D00B168CC /* AudioUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173424901D930A6D00B168CC /* AudioUnitViewController.swift */; };
+		173424941D930A6D00B168CC /* AudioUnitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 173424921D930A6D00B168CC /* AudioUnitViewController.xib */; };
+		1734249A1D930A9000B168CC /* RandomizerAudioUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174043101D92759600236452 /* RandomizerAudioUnit.swift */; };
+		1734249C1D930D9400B168CC /* AudioParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734249B1D930D9400B168CC /* AudioParameter.swift */; };
+		1734249D1D930D9400B168CC /* AudioParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734249B1D930D9400B168CC /* AudioParameter.swift */; };
 		174042E81D9265D100236452 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174042E71D9265D100236452 /* AppDelegate.swift */; };
 		174042EA1D9265D100236452 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174042E91D9265D100236452 /* ViewController.swift */; };
 		174042ED1D9265D100236452 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174042EB1D9265D100236452 /* Main.storyboard */; };
 		174042EF1D9265D100236452 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 174042EE1D9265D100236452 /* Assets.xcassets */; };
 		174042F21D9265D100236452 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174042F01D9265D100236452 /* LaunchScreen.storyboard */; };
+		174043011D92729400236452 /* MyAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 174043001D92729400236452 /* MyAudioUnit.m */; };
+		174043031D92729400236452 /* AudioUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174043021D92729400236452 /* AudioUnitViewController.swift */; };
+		174043061D92729400236452 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 174043041D92729400236452 /* MainInterface.storyboard */; };
+		1740430B1D92729400236452 /* AudioRandomizerExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 174042FD1D92729400236452 /* AudioRandomizerExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		174043111D92759600236452 /* RandomizerAudioUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174043101D92759600236452 /* RandomizerAudioUnit.swift */; };
+		174043171D92766E00236452 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 174043161D92766E00236452 /* AVFoundation.framework */; };
+		178B3C3A1D93C1EC0066B880 /* RandomizerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178B3C391D93C1EC0066B880 /* RandomizerCore.swift */; };
+		178B3C3B1D93C1EC0066B880 /* RandomizerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178B3C391D93C1EC0066B880 /* RandomizerCore.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		174043091D92729400236452 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 174042DC1D9265D100236452 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 174042FC1D92729400236452;
+			remoteInfo = AudioRandomizerExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1740430F1D92729400236452 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1740430B1D92729400236452 /* AudioRandomizerExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		172FAC5C1D94426500B49594 /* PresetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetModel.swift; sourceTree = "<group>"; };
+		173424891D930A6D00B168CC /* AudioRandomizerExtensionMac.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AudioRandomizerExtensionMac.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1734248F1D930A6D00B168CC /* AudioRandomizerExtensionMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AudioRandomizerExtensionMac.entitlements; sourceTree = "<group>"; };
+		173424901D930A6D00B168CC /* AudioUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitViewController.swift; sourceTree = "<group>"; };
+		173424931D930A6D00B168CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AudioUnitViewController.xib; sourceTree = "<group>"; };
+		173424951D930A6D00B168CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		173424961D930A6D00B168CC /* AudioRandomizerExtensionMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AudioRandomizerExtensionMac-Bridging-Header.h"; sourceTree = "<group>"; };
+		1734249B1D930D9400B168CC /* AudioParameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioParameter.swift; sourceTree = "<group>"; };
 		174042E41D9265D100236452 /* AudioRandomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioRandomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		174042E71D9265D100236452 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		174042E91D9265D100236452 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,9 +69,27 @@
 		174042EE1D9265D100236452 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		174042F11D9265D100236452 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		174042F31D9265D100236452 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		174042FD1D92729400236452 /* AudioRandomizerExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AudioRandomizerExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		174042FF1D92729400236452 /* MyAudioUnit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyAudioUnit.h; sourceTree = "<group>"; };
+		174043001D92729400236452 /* MyAudioUnit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyAudioUnit.m; sourceTree = "<group>"; };
+		174043021D92729400236452 /* AudioUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioUnitViewController.swift; sourceTree = "<group>"; };
+		174043051D92729400236452 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		174043071D92729400236452 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		174043081D92729400236452 /* AudioRandomizerExtension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AudioRandomizerExtension-Bridging-Header.h"; sourceTree = "<group>"; };
+		174043101D92759600236452 /* RandomizerAudioUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomizerAudioUnit.swift; sourceTree = "<group>"; };
+		174043141D92764200236452 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
+		174043161D92766E00236452 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		178B3C391D93C1EC0066B880 /* RandomizerCore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomizerCore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		173424861D930A6D00B168CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		174042E11D9265D100236452 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -32,14 +97,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		174042FA1D92729400236452 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174043171D92766E00236452 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1734248A1D930A6D00B168CC /* AudioRandomizerExtensionMac */ = {
+			isa = PBXGroup;
+			children = (
+				173424901D930A6D00B168CC /* AudioUnitViewController.swift */,
+				173424921D930A6D00B168CC /* AudioUnitViewController.xib */,
+				173424951D930A6D00B168CC /* Info.plist */,
+				173424961D930A6D00B168CC /* AudioRandomizerExtensionMac-Bridging-Header.h */,
+				1734248E1D930A6D00B168CC /* Supporting Files */,
+			);
+			path = AudioRandomizerExtensionMac;
+			sourceTree = "<group>";
+		};
+		1734248E1D930A6D00B168CC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1734248F1D930A6D00B168CC /* AudioRandomizerExtensionMac.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		174042DB1D9265D100236452 = {
 			isa = PBXGroup;
 			children = (
 				174042E61D9265D100236452 /* AudioRandomizer */,
+				174042FE1D92729400236452 /* AudioRandomizerExtension */,
+				1734248A1D930A6D00B168CC /* AudioRandomizerExtensionMac */,
 				174042E51D9265D100236452 /* Products */,
+				174043131D92764200236452 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,6 +143,8 @@
 			isa = PBXGroup;
 			children = (
 				174042E41D9265D100236452 /* AudioRandomizer.app */,
+				174042FD1D92729400236452 /* AudioRandomizerExtension.appex */,
+				173424891D930A6D00B168CC /* AudioRandomizerExtensionMac.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -64,9 +162,52 @@
 			path = AudioRandomizer;
 			sourceTree = "<group>";
 		};
+		174042FE1D92729400236452 /* AudioRandomizerExtension */ = {
+			isa = PBXGroup;
+			children = (
+				174042FF1D92729400236452 /* MyAudioUnit.h */,
+				174043001D92729400236452 /* MyAudioUnit.m */,
+				174043021D92729400236452 /* AudioUnitViewController.swift */,
+				174043041D92729400236452 /* MainInterface.storyboard */,
+				174043071D92729400236452 /* Info.plist */,
+				174043081D92729400236452 /* AudioRandomizerExtension-Bridging-Header.h */,
+				174043101D92759600236452 /* RandomizerAudioUnit.swift */,
+				1734249B1D930D9400B168CC /* AudioParameter.swift */,
+				178B3C391D93C1EC0066B880 /* RandomizerCore.swift */,
+				172FAC5C1D94426500B49594 /* PresetModel.swift */,
+			);
+			path = AudioRandomizerExtension;
+			sourceTree = "<group>";
+		};
+		174043131D92764200236452 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				174043161D92766E00236452 /* AVFoundation.framework */,
+				174043141D92764200236452 /* AudioUnit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		173424881D930A6D00B168CC /* AudioRandomizerExtensionMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 173424991D930A6D00B168CC /* Build configuration list for PBXNativeTarget "AudioRandomizerExtensionMac" */;
+			buildPhases = (
+				173424851D930A6D00B168CC /* Sources */,
+				173424861D930A6D00B168CC /* Frameworks */,
+				173424871D930A6D00B168CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AudioRandomizerExtensionMac;
+			productName = AudioRandomizerExtensionMac;
+			productReference = 173424891D930A6D00B168CC /* AudioRandomizerExtensionMac.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		174042E31D9265D100236452 /* AudioRandomizer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 174042F61D9265D100236452 /* Build configuration list for PBXNativeTarget "AudioRandomizer" */;
@@ -74,15 +215,34 @@
 				174042E01D9265D100236452 /* Sources */,
 				174042E11D9265D100236452 /* Frameworks */,
 				174042E21D9265D100236452 /* Resources */,
+				1740430F1D92729400236452 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1740430A1D92729400236452 /* PBXTargetDependency */,
 			);
 			name = AudioRandomizer;
 			productName = AudioRandomizer;
 			productReference = 174042E41D9265D100236452 /* AudioRandomizer.app */;
 			productType = "com.apple.product-type.application";
+		};
+		174042FC1D92729400236452 /* AudioRandomizerExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1740430C1D92729400236452 /* Build configuration list for PBXNativeTarget "AudioRandomizerExtension" */;
+			buildPhases = (
+				174042F91D92729400236452 /* Sources */,
+				174042FA1D92729400236452 /* Frameworks */,
+				174042FB1D92729400236452 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AudioRandomizerExtension;
+			productName = AudioRandomizerExtension;
+			productReference = 174042FD1D92729400236452 /* AudioRandomizerExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -94,7 +254,17 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = leroy;
 				TargetAttributes = {
+					173424881D930A6D00B168CC = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = A24MFYL5LE;
+						ProvisioningStyle = Automatic;
+					};
 					174042E31D9265D100236452 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = A24MFYL5LE;
+						ProvisioningStyle = Automatic;
+					};
+					174042FC1D92729400236452 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = A24MFYL5LE;
 						ProvisioningStyle = Automatic;
@@ -115,11 +285,21 @@
 			projectRoot = "";
 			targets = (
 				174042E31D9265D100236452 /* AudioRandomizer */,
+				174042FC1D92729400236452 /* AudioRandomizerExtension */,
+				173424881D930A6D00B168CC /* AudioRandomizerExtensionMac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		173424871D930A6D00B168CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				173424941D930A6D00B168CC /* AudioUnitViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		174042E21D9265D100236452 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -130,9 +310,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		174042FB1D92729400236452 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				174043061D92729400236452 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		173424851D930A6D00B168CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172FAC5E1D94426500B49594 /* PresetModel.swift in Sources */,
+				173424911D930A6D00B168CC /* AudioUnitViewController.swift in Sources */,
+				178B3C3B1D93C1EC0066B880 /* RandomizerCore.swift in Sources */,
+				1734249D1D930D9400B168CC /* AudioParameter.swift in Sources */,
+				1734249A1D930A9000B168CC /* RandomizerAudioUnit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		174042E01D9265D100236452 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -142,9 +342,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		174042F91D92729400236452 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				172FAC5D1D94426500B49594 /* PresetModel.swift in Sources */,
+				174043011D92729400236452 /* MyAudioUnit.m in Sources */,
+				174043031D92729400236452 /* AudioUnitViewController.swift in Sources */,
+				178B3C3A1D93C1EC0066B880 /* RandomizerCore.swift in Sources */,
+				1734249C1D930D9400B168CC /* AudioParameter.swift in Sources */,
+				174043111D92759600236452 /* RandomizerAudioUnit.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		1740430A1D92729400236452 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 174042FC1D92729400236452 /* AudioRandomizerExtension */;
+			targetProxy = 174043091D92729400236452 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		173424921D930A6D00B168CC /* AudioUnitViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				173424931D930A6D00B168CC /* Base */,
+			);
+			name = AudioUnitViewController.xib;
+			sourceTree = "<group>";
+		};
 		174042EB1D9265D100236452 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -161,9 +390,53 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		174043041D92729400236452 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				174043051D92729400236452 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		173424971D930A6D00B168CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AudioRandomizerExtensionMac/AudioRandomizerExtensionMac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				DEVELOPMENT_TEAM = A24MFYL5LE;
+				INFOPLIST_FILE = AudioRandomizerExtensionMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liweiyang.AudioRandomizerExtensionMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AudioRandomizerExtensionMac/AudioRandomizerExtensionMac-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		173424981D930A6D00B168CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = AudioRandomizerExtensionMac/AudioRandomizerExtensionMac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				DEVELOPMENT_TEAM = A24MFYL5LE;
+				INFOPLIST_FILE = AudioRandomizerExtensionMac/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liweiyang.AudioRandomizerExtensionMac;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AudioRandomizerExtensionMac/AudioRandomizerExtensionMac-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		174042F41D9265D100236452 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -260,6 +533,7 @@
 		174042F71D9265D100236452 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A24MFYL5LE;
 				INFOPLIST_FILE = AudioRandomizer/Info.plist;
@@ -273,6 +547,7 @@
 		174042F81D9265D100236452 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A24MFYL5LE;
 				INFOPLIST_FILE = AudioRandomizer/Info.plist;
@@ -283,9 +558,46 @@
 			};
 			name = Release;
 		};
+		1740430D1D92729400236452 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = A24MFYL5LE;
+				INFOPLIST_FILE = AudioRandomizerExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liweiyang.AudioRandomizer.AudioRandomizerExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AudioRandomizerExtension/AudioRandomizerExtension-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1740430E1D92729400236452 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = A24MFYL5LE;
+				INFOPLIST_FILE = AudioRandomizerExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liweiyang.AudioRandomizer.AudioRandomizerExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "AudioRandomizerExtension/AudioRandomizerExtension-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		173424991D930A6D00B168CC /* Build configuration list for PBXNativeTarget "AudioRandomizerExtensionMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				173424971D930A6D00B168CC /* Debug */,
+				173424981D930A6D00B168CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		174042DF1D9265D100236452 /* Build configuration list for PBXProject "AudioRandomizer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -302,6 +614,16 @@
 				174042F81D9265D100236452 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1740430C1D92729400236452 /* Build configuration list for PBXNativeTarget "AudioRandomizerExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1740430D1D92729400236452 /* Debug */,
+				1740430E1D92729400236452 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
