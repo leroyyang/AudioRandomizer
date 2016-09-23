@@ -537,6 +537,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A24MFYL5LE;
 				INFOPLIST_FILE = AudioRandomizer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liweiyang.AudioRandomizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -551,6 +552,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = A24MFYL5LE;
 				INFOPLIST_FILE = AudioRandomizer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liweiyang.AudioRandomizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -563,6 +565,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = A24MFYL5LE;
 				INFOPLIST_FILE = AudioRandomizerExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liweiyang.AudioRandomizer.AudioRandomizerExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -577,6 +580,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = A24MFYL5LE;
 				INFOPLIST_FILE = AudioRandomizerExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liweiyang.AudioRandomizer.AudioRandomizerExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";

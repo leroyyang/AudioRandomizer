@@ -8,9 +8,10 @@
 
 import CoreAudioKit
 
-public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
+public class MacAudioUnitViewController: AUViewController, AUAudioUnitFactory {
     var audioUnit: AUAudioUnit?
     
+  
     public override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,13 +21,13 @@ public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
         
         // Get the parameter tree and add observers for any parameters that the UI needs to keep in sync with the AudioUnit
     }
-    public override func beginRequest(with context: NSExtensionContext) {
-        print("a")
-    }
+
     public func createAudioUnit(with componentDescription: AudioComponentDescription) throws -> AUAudioUnit {
+        @IBAction func gainValueChanged(_ sender: AnyObject) {
+        }
         audioUnit = try RandomizerAudioUnit(componentDescription: componentDescription, options: [])
         
         return audioUnit!
     }
-    
+
 }

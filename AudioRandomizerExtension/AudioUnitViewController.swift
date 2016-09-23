@@ -9,8 +9,9 @@
 import CoreAudioKit
 
 public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
-    var audioUnit: AUAudioUnit?
+    var audioUnit: RandomizerAudioUnit?
     
+    @IBOutlet weak var gainSlider: UISlider!
     public override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,10 +22,17 @@ public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
         // Get the parameter tree and add observers for any parameters that the UI needs to keep in sync with the AudioUnit
     }
     
+    
+    @IBAction func gainValueChanged(_ sender: AnyObject) {
+        audioUnit?.setGain(value: gainSlider.value)
+        
+    }
+    
     public func createAudioUnit(with componentDescription: AudioComponentDescription) throws -> AUAudioUnit {
         audioUnit = try RandomizerAudioUnit(componentDescription: componentDescription, options: [])
         
         return audioUnit!
     }
+    
     
 }

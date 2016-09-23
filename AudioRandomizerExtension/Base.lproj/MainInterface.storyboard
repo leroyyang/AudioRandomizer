@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,16 +24,28 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="taC-uC-P6T">
+                                <connections>
+                                    <action selector="gainValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="osX-qP-zdi"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="taC-uC-P6T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="1l9-US-PIF"/>
                             <constraint firstItem="j5c-MY-xUb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GEu-gu-ROi"/>
+                            <constraint firstItem="taC-uC-P6T" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="K82-CQ-bmQ"/>
+                            <constraint firstItem="taC-uC-P6T" firstAttribute="top" secondItem="j5c-MY-xUb" secondAttribute="bottom" constant="10" id="P0a-R8-IYp"/>
                             <constraint firstItem="j5c-MY-xUb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="sbA-2i-4eA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gainSlider" destination="taC-uC-P6T" id="sWy-bP-wSp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="116" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>
