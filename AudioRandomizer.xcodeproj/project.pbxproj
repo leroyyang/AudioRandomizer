@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17053CFE1D96E7D50098AFD0 /* EffectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17053CFD1D96E7D50098AFD0 /* EffectData.swift */; };
+		17053CFF1D96E7D50098AFD0 /* EffectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17053CFD1D96E7D50098AFD0 /* EffectData.swift */; };
+		17053D071D96EC610098AFD0 /* AudioRandomizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17053D061D96EC610098AFD0 /* AudioRandomizerTests.swift */; };
+		17053D0E1D96F4960098AFD0 /* EffectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17053CFD1D96E7D50098AFD0 /* EffectData.swift */; };
 		172FAC5D1D94426500B49594 /* PresetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172FAC5C1D94426500B49594 /* PresetModel.swift */; };
 		172FAC5E1D94426500B49594 /* PresetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172FAC5C1D94426500B49594 /* PresetModel.swift */; };
 		173424911D930A6D00B168CC /* AudioUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173424901D930A6D00B168CC /* AudioUnitViewController.swift */; };
@@ -30,6 +34,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		17053D091D96EC610098AFD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 174042DC1D9265D100236452 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 174042E31D9265D100236452;
+			remoteInfo = AudioRandomizer;
+		};
 		174043091D92729400236452 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 174042DC1D9265D100236452 /* Project object */;
@@ -54,6 +65,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		17053CFD1D96E7D50098AFD0 /* EffectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EffectData.swift; sourceTree = "<group>"; };
+		17053D041D96EC610098AFD0 /* AudioRandomizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudioRandomizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		17053D061D96EC610098AFD0 /* AudioRandomizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRandomizerTests.swift; sourceTree = "<group>"; };
+		17053D081D96EC610098AFD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		172FAC5C1D94426500B49594 /* PresetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetModel.swift; sourceTree = "<group>"; };
 		173424891D930A6D00B168CC /* AudioRandomizerExtensionMac.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AudioRandomizerExtensionMac.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		1734248F1D930A6D00B168CC /* AudioRandomizerExtensionMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AudioRandomizerExtensionMac.entitlements; sourceTree = "<group>"; };
@@ -83,6 +98,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		17053D011D96EC610098AFD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		173424861D930A6D00B168CC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -108,6 +130,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17053D051D96EC610098AFD0 /* AudioRandomizerTests */ = {
+			isa = PBXGroup;
+			children = (
+				17053D061D96EC610098AFD0 /* AudioRandomizerTests.swift */,
+				17053D081D96EC610098AFD0 /* Info.plist */,
+			);
+			path = AudioRandomizerTests;
+			sourceTree = "<group>";
+		};
 		1734248A1D930A6D00B168CC /* AudioRandomizerExtensionMac */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +165,7 @@
 				174042E61D9265D100236452 /* AudioRandomizer */,
 				174042FE1D92729400236452 /* AudioRandomizerExtension */,
 				1734248A1D930A6D00B168CC /* AudioRandomizerExtensionMac */,
+				17053D051D96EC610098AFD0 /* AudioRandomizerTests */,
 				174042E51D9265D100236452 /* Products */,
 				174043131D92764200236452 /* Frameworks */,
 			);
@@ -145,6 +177,7 @@
 				174042E41D9265D100236452 /* AudioRandomizer.app */,
 				174042FD1D92729400236452 /* AudioRandomizerExtension.appex */,
 				173424891D930A6D00B168CC /* AudioRandomizerExtensionMac.appex */,
+				17053D041D96EC610098AFD0 /* AudioRandomizerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,6 +208,7 @@
 				1734249B1D930D9400B168CC /* AudioParameter.swift */,
 				178B3C391D93C1EC0066B880 /* RandomizerCore.swift */,
 				172FAC5C1D94426500B49594 /* PresetModel.swift */,
+				17053CFD1D96E7D50098AFD0 /* EffectData.swift */,
 			);
 			path = AudioRandomizerExtension;
 			sourceTree = "<group>";
@@ -191,6 +225,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		17053D031D96EC610098AFD0 /* AudioRandomizerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 17053D0B1D96EC610098AFD0 /* Build configuration list for PBXNativeTarget "AudioRandomizerTests" */;
+			buildPhases = (
+				17053D001D96EC610098AFD0 /* Sources */,
+				17053D011D96EC610098AFD0 /* Frameworks */,
+				17053D021D96EC610098AFD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				17053D0A1D96EC610098AFD0 /* PBXTargetDependency */,
+			);
+			name = AudioRandomizerTests;
+			productName = AudioRandomizerTests;
+			productReference = 17053D041D96EC610098AFD0 /* AudioRandomizerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		173424881D930A6D00B168CC /* AudioRandomizerExtensionMac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 173424991D930A6D00B168CC /* Build configuration list for PBXNativeTarget "AudioRandomizerExtensionMac" */;
@@ -254,6 +306,12 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = leroy;
 				TargetAttributes = {
+					17053D031D96EC610098AFD0 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = A24MFYL5LE;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 174042E31D9265D100236452;
+					};
 					173424881D930A6D00B168CC = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = A24MFYL5LE;
@@ -287,11 +345,19 @@
 				174042E31D9265D100236452 /* AudioRandomizer */,
 				174042FC1D92729400236452 /* AudioRandomizerExtension */,
 				173424881D930A6D00B168CC /* AudioRandomizerExtensionMac */,
+				17053D031D96EC610098AFD0 /* AudioRandomizerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		17053D021D96EC610098AFD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		173424871D930A6D00B168CC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -321,10 +387,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		17053D001D96EC610098AFD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				17053D0E1D96F4960098AFD0 /* EffectData.swift in Sources */,
+				17053D071D96EC610098AFD0 /* AudioRandomizerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		173424851D930A6D00B168CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17053CFF1D96E7D50098AFD0 /* EffectData.swift in Sources */,
 				172FAC5E1D94426500B49594 /* PresetModel.swift in Sources */,
 				173424911D930A6D00B168CC /* AudioUnitViewController.swift in Sources */,
 				178B3C3B1D93C1EC0066B880 /* RandomizerCore.swift in Sources */,
@@ -347,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				172FAC5D1D94426500B49594 /* PresetModel.swift in Sources */,
+				17053CFE1D96E7D50098AFD0 /* EffectData.swift in Sources */,
 				174043011D92729400236452 /* MyAudioUnit.m in Sources */,
 				174043031D92729400236452 /* AudioUnitViewController.swift in Sources */,
 				178B3C3A1D93C1EC0066B880 /* RandomizerCore.swift in Sources */,
@@ -358,6 +435,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		17053D0A1D96EC610098AFD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 174042E31D9265D100236452 /* AudioRandomizer */;
+			targetProxy = 17053D091D96EC610098AFD0 /* PBXContainerItemProxy */;
+		};
 		1740430A1D92729400236452 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 174042FC1D92729400236452 /* AudioRandomizerExtension */;
@@ -401,6 +483,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		17053D0C1D96EC610098AFD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = A24MFYL5LE;
+				INFOPLIST_FILE = AudioRandomizerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liweiyang.AudioRandomizerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AudioRandomizer.app/AudioRandomizer";
+			};
+			name = Debug;
+		};
+		17053D0D1D96EC610098AFD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = A24MFYL5LE;
+				INFOPLIST_FILE = AudioRandomizerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.liweiyang.AudioRandomizerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AudioRandomizer.app/AudioRandomizer";
+			};
+			name = Release;
+		};
 		173424971D930A6D00B168CC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -593,6 +703,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		17053D0B1D96EC610098AFD0 /* Build configuration list for PBXNativeTarget "AudioRandomizerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17053D0C1D96EC610098AFD0 /* Debug */,
+				17053D0D1D96EC610098AFD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		173424991D930A6D00B168CC /* Build configuration list for PBXNativeTarget "AudioRandomizerExtensionMac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

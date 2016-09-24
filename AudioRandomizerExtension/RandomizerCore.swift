@@ -10,7 +10,13 @@ import Foundation
 import Accelerate
 class RandomizerCore {
     var gainParameter:AUParameter!
-    var bufferedDataArray:[UnsafeMutableBufferPointer<Float>] = [UnsafeMutableBufferPointer<Float>]()
+    var multichannelBufferedDataArray:[[UnsafeMutableBufferPointer<Float>]] = [[UnsafeMutableBufferPointer<Float>]]()
+    var effectData:EffectData!
+    var gotData = false
+    init() {
+        multichannelBufferedDataArray.append([UnsafeMutableBufferPointer<Float>]())
+        multichannelBufferedDataArray.append([UnsafeMutableBufferPointer<Float>]())
+    }
     func setGain(value:Float) {
         if value <= 1 && value >= 0 {
             gainParameter.value = value
@@ -28,52 +34,31 @@ class RandomizerCore {
         let drive = 0.7
         let a = sin( ((drive + 1)/101) / (Double.pi/2))
         let k:Float = Float(2*a/(1-a))
-        
+        checkEffectData(audioDataPointer: audioDataPointer, dataSize: dataSize)
         for index in 0 ..< audioDataPointer.count {
             let audioDataArray = UnsafeMutableBufferPointer(start:audioDataPointer[index].mData?.assumingMemoryBound(to: Float.self), count:dataSize)
-            if bufferedDataArray.count < 10 {
-                bufferedDataArray.append(audioDataArray)
-            } else {
-                let randNum = arc4random_uniform(9)
-                bufferedDataArray.remove(at: Int(randNum))
-                bufferedDataArray.append(audioDataArray)
-            }
-            let threshold:Float = 0.25
-            var randChoose = false
-            if  arc4random_uniform(10) > 3 && bufferedDataArray.count == 10 {
-                randChoose = true
-            }
-            let randChooseIndex = Int(arc4random_uniform(9))
             for i in 0 ..< audioDataArray.count {
-                /*if audioDataArray[i] > 0 {
-                    audioDataArray[i] = fmin(audioDataArray[i], threshold)
-                } else {
-                    audioDataArray[i] = fmax(audioDataArray[i], -threshold)
-                }
-                audioDataArray[i] /= threshold
-                audioDataArray[i] = 1.5*audioDataArray[i] - 0.5*audioDataArray[i]*audioDataArray[i]*audioDataArray[i]*/
-                if randChoose {
-                    audioDataArray[i] = (1+k)*bufferedDataArray[randChooseIndex][i] / (1+k*abs(bufferedDataArray[randChooseIndex][i]))
-                } else {
+                audioDataArray[i] = (1+k)*audioDataArray[i] / (1+k*abs(audioDataArray[i]))
                 
-                    audioDataArray[i] = (1+k)*audioDataArray[i] / (1+k*abs(audioDataArray[i]))
-                }
-                /*let randNum = arc4random_uniform(30)
-                if randNum < 10 {
-                    audioDataArray[i] *= 0.2
-                } else if randNum > 20 {
-                    audioDataArray[i] *= 1.3
-                    if audioDataArray[i] > 1 {
-                        audioDataArray[i] *= 0.75
-                    }
-                }*/
             }
             vDSP_vsmul(audioDataArray.baseAddress!, 1, &gainParameter.value, audioDataArray.baseAddress!, 1, vDSP_Length(dataSize))
         }
-        
-        
-        
-        
     }
+    
+    func checkEffectData(audioDataPointer:UnsafeMutableAudioBufferListPointer, dataSize:Int) {
+        if multichannelBufferedDataArray.count < 10 || !gotData  {
+            for index in 0 ..< audioDataPointer.count {
+                let audioDataArray = UnsafeMutableBufferPointer(start:audioDataPointer[index].mData?.assumingMemoryBound(to: Float.self), count:dataSize)
+                multichannelBufferedDataArray[index].append(audioDataArray)
+            }
+        } else {
+            effectData = EffectData(originDataArray: multichannelBufferedDataArray)
+            multichannelBufferedDataArray[0].removeAll()
+            multichannelBufferedDataArray[1].removeAll()
+            gotData = true
+        }
+    }
+    
+    
     
 }
