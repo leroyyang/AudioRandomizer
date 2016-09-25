@@ -8,34 +8,34 @@
 
 import Foundation
 class EffectData {
-    var multiChannelBufferedDataArray:[[[Float]]] = [[[Float]]]()
+    var multiChannelBufferedDataArray:[[Float]] = [[Float]]()
     
-    init(originDataArray:[[UnsafeMutableBufferPointer<Float>]]) {
+    init(originDataArray:[[Float]]) {
         process(originDataArray: originDataArray)
     }
     
-    func process(originDataArray:[[UnsafeMutableBufferPointer<Float>]]) {
-        multiChannelBufferedDataArray.removeAll()
-        for index in 0 ..< originDataArray.count {
-            multiChannelBufferedDataArray.append([[Float]]())
-            for originData in originDataArray[index] {
-                let dataArray = Array<Float>(originData)
-                
-                multiChannelBufferedDataArray[index].append(dataArray)
-            }
-        }
+    func process(originDataArray:[[Float]]) {
+        multiChannelBufferedDataArray = originDataArray
+       /* multiChannelBufferedDataArray.removeAll()
+        for i in 0 ..< originDataArray.count {
+            multiChannelBufferedDataArray.append(originDataArray[i])
+        }*/
+        
+        
     }
     
-    func produceReversedDataArray()->[[[Float]]] {
-        var reversedArray:[[[Float]]] = [[[Float]]]()
+    func produceReversedDataArray()->[[Float]] {
+        var reversedArray:[[Float]] = [[Float]]()
         
         for i in 0 ..< multiChannelBufferedDataArray.count {
-            var oneChannelArray:[[Float]] = multiChannelBufferedDataArray[i].reversed()
-            for j in 0 ..< oneChannelArray.count {
-                oneChannelArray[j].reverse()
-            }
+            let oneChannelArray:[Float] = multiChannelBufferedDataArray[i].reversed()
+            
             reversedArray.append(oneChannelArray)
         }
         return reversedArray
+    }
+    
+    func getOriginData()->[[Float]] {
+        return multiChannelBufferedDataArray
     }
 }

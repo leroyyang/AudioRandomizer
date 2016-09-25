@@ -56,17 +56,17 @@ class AudioRandomizerTests: XCTestCase {
     
     func testEffectDataInit() {
         print(effectData.multiChannelBufferedDataArray.count)
-        print(effectData.multiChannelBufferedDataArray[0][0][1])
-        print(effectData.multiChannelBufferedDataArray[1][0][1])
-        assert(effectData.multiChannelBufferedDataArray[0][0][1] == 1)
-        assert(effectData.multiChannelBufferedDataArray[1][1][1] == 3 )
+        print(effectData.multiChannelBufferedDataArray[0][1])
+        print(effectData.multiChannelBufferedDataArray[1][1])
+        assert(effectData.multiChannelBufferedDataArray[0][0] == 0)
+        assert(effectData.multiChannelBufferedDataArray[1][2] == 2)
     }
     
     func testReversedData() {
         var reversedArray = effectData.produceReversedDataArray()
-        assert(reversedArray[0][0][0] == 2)
-        assert(reversedArray[1][1][1] == 0)
-        assert(reversedArray[1][0][0] == 3)
+        assert(reversedArray[0][0] == 2)
+        assert(reversedArray[1][1] == 2)
+        assert(reversedArray[1][0] == 3)
     }
     
 }

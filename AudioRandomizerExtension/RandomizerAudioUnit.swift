@@ -13,13 +13,12 @@ class RandomizerAudioUnit:AUAudioUnit {
     private let maxChannels = 2
     private var _inputBusses: AUAudioUnitBusArray!
     private var _outputBusses: AUAudioUnitBusArray!
-    //private var gainParameter:AUParameter!
     private var _parameterTree: AUParameterTree!
     private let randomizerCore = RandomizerCore()
     private var inputBuffer:UnsafeMutablePointer<AudioBufferList>!
     private var _factoryPresets: [AUAudioUnitPreset]?
     private var currentPresetNumber = 0
-    
+
     override public var inputBusses: AUAudioUnitBusArray {
         return _inputBusses
     }
@@ -93,12 +92,12 @@ class RandomizerAudioUnit:AUAudioUnit {
                 return kAudioUnitErr_NoConnection
             }
             //let dataSize = UInt32( UInt32(Int(MemoryLayout<Float>.size)) * frameCount)
-            let dataSize = outputData.pointee.mBuffers.mDataByteSize
-            let data1 = malloc(Int(dataSize))
-            let data2 = malloc(Int(dataSize))
+            let dataByteSize = outputData.pointee.mBuffers.mDataByteSize
+            let data1 = malloc(Int(dataByteSize))
+            let data2 = malloc(Int(dataByteSize))
             let bufferListPointer = AudioBufferList.allocate(maximumBuffers: Int(outputData.pointee.mNumberBuffers))
-            bufferListPointer[0] = AudioBuffer.init(mNumberChannels: 1, mDataByteSize: dataSize, mData: data1)
-            bufferListPointer[1] = AudioBuffer.init(mNumberChannels: 1, mDataByteSize: dataSize, mData: data2)
+            bufferListPointer[0] = AudioBuffer.init(mNumberChannels: 1, mDataByteSize: dataByteSize, mData: data1)
+            bufferListPointer[1] = AudioBuffer.init(mNumberChannels: 1, mDataByteSize: dataByteSize, mData: data2)
             //var bufferList:UnsafeMutablePointer<AudioBufferList>  = UnsafeMutablePointer<AudioBufferList>.allocate(capacity: 1)
            /* var audioBuffer = AudioBuffer()
             audioBuffer.mDataByteSize = outputData.pointee.mBuffers.mDataByteSize
@@ -111,9 +110,9 @@ class RandomizerAudioUnit:AUAudioUnit {
        
             /*let dataArray = UnsafeBufferPointer(start: bufferList.mBuffers.mData?.assumingMemoryBound(to: Float.self), count:  Int(bufferList.mBuffers.mDataByteSize)/MemoryLayout<Float>.size)*/
             let bufferedOutput = UnsafeMutableAudioBufferListPointer(outputData)
-            strongSelf.randomizerCore.processAudioData(audioDataPointer:bufferListPointer , dataSize: Int(dataSize))
+            strongSelf.randomizerCore.processAudioData(audioDataPointer:bufferListPointer , dataByteSize: Int(dataByteSize))
             for i in 0 ..< bufferedOutput.count {
-                memcpy(bufferedOutput[i].mData, bufferListPointer[i].mData,Int(dataSize))
+                memcpy(bufferedOutput[i].mData, bufferListPointer[i].mData,Int(dataByteSize))
             }
             
             
