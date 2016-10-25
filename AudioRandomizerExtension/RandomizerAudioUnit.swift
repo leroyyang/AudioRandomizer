@@ -59,21 +59,22 @@ class RandomizerAudioUnit:AUAudioUnit {
         
         
     }
-    //MARK: - preset
     
+    //MARK: - preset
     private func setupFactoryPresets() {
         let preset = AUAudioUnitPreset()
         preset.number = 0
-        preset.name = "first"
+        preset.name = "loud"
         let preset2 = AUAudioUnitPreset()
         preset2.number = 1
-        preset2.name = "second"
+        preset2.name = "mid"
         let preset3 = AUAudioUnitPreset()
         preset3.number = 2
-        preset3.name = "third"
+        preset3.name = "quiet"
         _factoryPresets = [preset,preset2,preset3]
         self.currentPreset = preset
     }
+    
     override var currentPreset: AUAudioUnitPreset? {
         didSet {
             currentPresetNumber = currentPreset == nil ? currentPresetNumber : currentPreset!.number
@@ -81,6 +82,7 @@ class RandomizerAudioUnit:AUAudioUnit {
             randomizerCore.setGain(value: preset.gain)
         }
     }
+    
     func setGain(value:Float) {
         randomizerCore.setGain(value: value)
     }
@@ -91,33 +93,19 @@ class RandomizerAudioUnit:AUAudioUnit {
             guard let strongSelf = self, let pullBlock = pullInputBlock else {
                 return kAudioUnitErr_NoConnection
             }
-            //let dataSize = UInt32( UInt32(Int(MemoryLayout<Float>.size)) * frameCount)
             let dataByteSize = outputData.pointee.mBuffers.mDataByteSize
             let data1 = malloc(Int(dataByteSize))
             let data2 = malloc(Int(dataByteSize))
             let bufferListPointer = AudioBufferList.allocate(maximumBuffers: Int(outputData.pointee.mNumberBuffers))
             bufferListPointer[0] = AudioBuffer.init(mNumberChannels: 1, mDataByteSize: dataByteSize, mData: data1)
             bufferListPointer[1] = AudioBuffer.init(mNumberChannels: 1, mDataByteSize: dataByteSize, mData: data2)
-            //var bufferList:UnsafeMutablePointer<AudioBufferList>  = UnsafeMutablePointer<AudioBufferList>.allocate(capacity: 1)
-           /* var audioBuffer = AudioBuffer()
-            audioBuffer.mDataByteSize = outputData.pointee.mBuffers.mDataByteSize
-            audioBuffer.mNumberChannels = outputData.pointee.mBuffers.mNumberChannels
-            audioBuffer.mData = malloc(Int(frameCount)*Int(MemoryLayout<Float>.size))
-            var bufferList = AudioBufferList(mNumberBuffers: outputData.pointee.mNumberBuffers, mBuffers:audioBuffer )
-            */
             
             let status = pullBlock(actionFlags, timestamp, frameCount, outputBusNumber, bufferListPointer.unsafeMutablePointer);
-       
-            /*let dataArray = UnsafeBufferPointer(start: bufferList.mBuffers.mData?.assumingMemoryBound(to: Float.self), count:  Int(bufferList.mBuffers.mDataByteSize)/MemoryLayout<Float>.size)*/
             let bufferedOutput = UnsafeMutableAudioBufferListPointer(outputData)
             strongSelf.randomizerCore.processAudioData(audioDataPointer:bufferListPointer , dataByteSize: Int(dataByteSize))
             for i in 0 ..< bufferedOutput.count {
                 memcpy(bufferedOutput[i].mData, bufferListPointer[i].mData,Int(dataByteSize))
             }
-            
-            
-            
-            
             return status
             
         }
