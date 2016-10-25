@@ -65,12 +65,15 @@ class RandomizerAudioUnit:AUAudioUnit {
         let preset = AUAudioUnitPreset()
         preset.number = 0
         preset.name = "loud"
+        PresetModel.add(preset:RandomizerPreset(gain: 1),presetNumber: 0)
         let preset2 = AUAudioUnitPreset()
         preset2.number = 1
         preset2.name = "mid"
+        PresetModel.add(preset:RandomizerPreset(gain: 0.5),presetNumber: 1)
         let preset3 = AUAudioUnitPreset()
         preset3.number = 2
         preset3.name = "quiet"
+        PresetModel.add(preset:RandomizerPreset(gain: 0.1),presetNumber: 2)
         _factoryPresets = [preset,preset2,preset3]
         self.currentPreset = preset
     }

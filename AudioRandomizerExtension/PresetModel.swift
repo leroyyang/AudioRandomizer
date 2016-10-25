@@ -9,13 +9,12 @@
 import Foundation
 
 class PresetModel {
-    static private let presets:[RandomizerPreset] = [ RandomizerPreset(gain: 1),RandomizerPreset(gain: 0.5),RandomizerPreset(gain: 0.1)]
+    static private var presets:[Int:RandomizerPreset] = [Int:RandomizerPreset]()
     static func getPreset(presetNumber:Int)->RandomizerPreset {
-        if presetNumber < presets.count {
-           return  presets[presetNumber]
-        } else {
-            return presets[0]
-        }
+        return  presets[presetNumber]!
+    }
+    static func add(preset:RandomizerPreset,presetNumber:Int) {
+        presets[presetNumber] = preset
     }
 }
 struct RandomizerPreset {
