@@ -8,14 +8,16 @@
 
 import Foundation
 import Accelerate
+import AudioUnit
 class RandomizerCore {
     var gainParameter:AUParameter!
     var multichannelBufferedDataArray:[[Float]] = [[Float]]()
     var effectData:EffectData!
-    var reversedEffectData:[[Float]]!
+    var producedEffectDataArray:[[Float]]!
     var gotData = false
-    var effectInterval = 300
+    let effectInterval = 200
     var effectIntervalIndex = 0
+    let effectBlockSize = 81920
     private var usingRandomEffect = false
     private var effectIndex = 0
     init() {
@@ -37,13 +39,13 @@ class RandomizerCore {
     }
     func processAudioData(audioDataPointer:UnsafeMutableAudioBufferListPointer,dataByteSize:Int) {
         let dataSize = dataByteSize/MemoryLayout<Float>.size
-        checkEffectData(audioDataPointer: audioDataPointer, dataSize: dataSize)
+        setEffectData(audioDataPointer: audioDataPointer, dataSize: dataSize)
         if gotData && !usingRandomEffect {
-            if effectIntervalIndex >= effectInterval && arc4random_uniform(100) > 93 {
+            if effectIntervalIndex >= effectInterval && arc4random_uniform(100) > 91 {
                 usingRandomEffect = true
                 effectIndex = 0
-                reversedEffectData = effectData.produceReversedDataArray()
-                print("effect")
+                effectData = EffectData(originDataArray: multichannelBufferedDataArray)
+                setEffectDataArray()
                 effectIntervalIndex = 0
             } else {
                 effectIntervalIndex += 1
@@ -52,48 +54,51 @@ class RandomizerCore {
         if usingRandomEffect {
             processEffectData(audioDataPointer: audioDataPointer, dataSize: dataSize)
         } else {
-            
             for index in 0 ..< audioDataPointer.count {
                 let audioDataArray = UnsafeMutableBufferPointer(start:audioDataPointer[index].mData?.assumingMemoryBound(to: Float.self), count:dataSize)
-               
                 vDSP_vsmul(audioDataArray.baseAddress!, 1, &gainParameter.value, audioDataArray.baseAddress!, 1, vDSP_Length(dataSize))
-                
             }
         }
-        
     }
     
-    func checkEffectData(audioDataPointer:UnsafeMutableAudioBufferListPointer, dataSize:Int) {
-        if multichannelBufferedDataArray[0].count < 102400 {
-            for channelIndex in 0 ..< audioDataPointer.count {
-                let audioDataArray = UnsafeMutableBufferPointer(start:audioDataPointer[channelIndex].mData!.assumingMemoryBound(to: Float.self), count:dataSize)
-                multichannelBufferedDataArray[channelIndex].append(contentsOf: Array<Float>(audioDataArray))
-            }
-        } else {
-            effectData = EffectData(originDataArray: multichannelBufferedDataArray)
-            multichannelBufferedDataArray[0].removeAll()
-            multichannelBufferedDataArray[1].removeAll()
+    func setEffectData(audioDataPointer:UnsafeMutableAudioBufferListPointer, dataSize:Int) {
+        let blockSize = 1024
+        if multichannelBufferedDataArray[0].count >= effectBlockSize {
             gotData = true
+            multichannelBufferedDataArray[0].removeSubrange(0 ..< blockSize)
+            multichannelBufferedDataArray[1].removeSubrange(0 ..< blockSize)
+        }
+        for channelIndex in 0 ..< audioDataPointer.count {
+            let audioDataArray = UnsafeMutableBufferPointer(start:audioDataPointer[channelIndex].mData!.assumingMemoryBound(to: Float.self), count:dataSize)
+            multichannelBufferedDataArray[channelIndex].append(contentsOf: Array<Float>(audioDataArray))
         }
     }
     
     func processEffectData(audioDataPointer:UnsafeMutableAudioBufferListPointer,dataSize:Int) {
-        
         for channelIndex in 0 ..< audioDataPointer.count {
             let audioDataArray = UnsafeMutableBufferPointer(start:audioDataPointer[channelIndex].mData!.assumingMemoryBound(to: Float.self), count:dataSize)
             for i in 0 ..< dataSize {
-                if effectIndex < reversedEffectData[channelIndex].count {
-                    audioDataArray[i] = reversedEffectData[channelIndex][effectIndex+i]
-                    
+                if effectIndex < producedEffectDataArray[channelIndex].count {
+                    audioDataArray[i] = producedEffectDataArray[channelIndex][effectIndex+i]
                 }
             }
-          //  vDSP_vsmul(audioDataArray.baseAddress!, 1, &gainParameter.value, audioDataArray.baseAddress!, 1, vDSP_Length(dataSize))
+            vDSP_vsmul(audioDataArray.baseAddress!, 1, &gainParameter.value, audioDataArray.baseAddress!, 1, vDSP_Length(dataSize))
         }
         effectIndex += dataSize
-        if effectIndex >= reversedEffectData[0].count-1 {
+        if effectIndex >= producedEffectDataArray[0].count-1 || effectIndex >= effectBlockSize-1 {
             usingRandomEffect = false
         }
     }
     
-    
+    func setEffectDataArray() {
+        let effectType = Int(arc4random_uniform(2))
+        switch effectType {
+        case 0:
+            producedEffectDataArray = effectData.getOriginData()
+        case 1:
+            producedEffectDataArray = effectData.produceReversedDataArray()
+        default:
+            producedEffectDataArray = effectData.getOriginData()
+        }
+    }
 }
