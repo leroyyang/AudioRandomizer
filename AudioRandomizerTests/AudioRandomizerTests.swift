@@ -12,28 +12,14 @@ class AudioRandomizerTests: XCTestCase {
     var effectData:EffectData!
     override func setUp() {
         super.setUp()
-        var data1:[UnsafeMutableBufferPointer<Float>] = [UnsafeMutableBufferPointer<Float>]()
-        var data2:[UnsafeMutableBufferPointer<Float>] = [UnsafeMutableBufferPointer<Float>]()
+        var data1:[Float] = [Float]()
+        var data2:[Float] = [Float]()
         for x in 0 ..< 2 {
-            let ptr1 = UnsafeMutablePointer<Float>.allocate(capacity: Int(MemoryLayout<Float>.size)*2)
-            let buffer1 = UnsafeMutableBufferPointer(start: ptr1, count: 2)
             for i in 0 ..< 2 {
-                buffer1[i] = Float(i+x)
-                print(buffer1[i])
+                data1[i] = Float(i+x)
+                data2[i] = Float(i+x*2)
             }
-            
-            data1.append(buffer1)
         }
-        for x in 0 ..< 2 {
-            let ptr1 = UnsafeMutablePointer<Float>.allocate(capacity: Int(MemoryLayout<Float>.size)*2)
-            let buffer1 = UnsafeMutableBufferPointer(start: ptr1, count: 2)
-            for i in 0 ..< 2 {
-                buffer1[i] = Float(i+x*2)
-            }
-            data2.append(buffer1)
-        }
-        
-        
         effectData = EffectData(originDataArray:[data1,data2])
     }
     
@@ -55,9 +41,6 @@ class AudioRandomizerTests: XCTestCase {
     }
     
     func testEffectDataInit() {
-        print(effectData.multiChannelBufferedDataArray.count)
-        print(effectData.multiChannelBufferedDataArray[0][1])
-        print(effectData.multiChannelBufferedDataArray[1][1])
         assert(effectData.multiChannelBufferedDataArray[0][0] == 0)
         assert(effectData.multiChannelBufferedDataArray[1][2] == 2)
     }
