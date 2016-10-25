@@ -18,8 +18,6 @@ public class MacAudioUnitViewController: AUViewController, AUAudioUnitFactory {
         if audioUnit == nil {
             return
         }
-        
-        // Get the parameter tree and add observers for any parameters that the UI needs to keep in sync with the AudioUnit
     }
 
     public func createAudioUnit(with componentDescription: AudioComponentDescription) throws -> AUAudioUnit {

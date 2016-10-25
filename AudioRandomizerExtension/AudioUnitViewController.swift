@@ -14,12 +14,10 @@ public class AudioUnitViewController: AUViewController, AUAudioUnitFactory {
     @IBOutlet weak var gainSlider: UISlider!
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
         if audioUnit == nil {
             return
         }
         
-        // Get the parameter tree and add observers for any parameters that the UI needs to keep in sync with the AudioUnit
     }
     
     
